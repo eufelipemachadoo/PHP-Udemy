@@ -1,0 +1,139 @@
+﻿*{
+    font-family: 'Oswald', sans-serif;
+    box-sizing: border-box; /*Conteúdo, Pedding e borda dentro da medida*/
+    /*CONTENT-BOX: 100px; Apenas o conteúdo será 100x100 */ 
+}
+
+body{
+    height: 100vh; /*VH Divide a "TAG" em 100 partes iguais e o Nº 100 utiliza todas as partes, fazendo com que seja 100% */
+    margin: 0px; /*Por padrão o BODY tem a margem pequena, e zerando o "MARGIN" o espaço é pequeno*/
+    display: grid; /*Devide o "BODY" em LINHAS e COLUNAS*/
+    grid-template-rows: 120px 1fr 60px; /*Divide o grid em 3 linhas (ROWS), a primeira com 120px, e a ultima com 60px, como a linha do meio terá 1 "FRAGMENTO" ela vai ocupar todo o resto do grid*/
+    grid-template-columns: 1fr; /*O GRID vai ter uma só coluna (100% da tela)*/
+    /*grid-template-areas 300px 1fr; O grid vater ter 1 área com 300 px, e um fragmento que ocupa todo o resto do espaço*/
+    grid-template-areas: 
+        "cabecalho " /*area usada dentro da classe CABECALHO*/
+        "principal "
+        "rodape "
+}
+
+.cabecalho {
+    grid-area: cabecalho; /*dentro da classe CABECALHO tem uma ÁREA que se chama CABECALHO*/
+    background-color: #1867c0; /*O background da classe será azul*/
+    color: #fff;
+    display: flex; /*Coloca todos os ementos dentro da mesma linha*/
+    flex-direction: column; /*Coloca todos os ementos dentro da mesma coluna e define que a columa é o eixo principal*/
+    /*flex-direction: row-reverse; /*Coloca todos os ementos dentro da mesma linha e alinha os elementos em posição inversa na linha*/
+    justify-content: center; /*centralizar */
+    align-items: center; /**/
+    padding-bottom: 10px;
+    z-index: 1; /*abaixar um pouco o box-shadow*/
+    box-shadow: 0px 4px 9px -2px rgba(0,0,0,0.75); /* SOMBRA Gerado automaticamente no site https://www.cssmatic.com/box-shadow */
+}
+
+.cabecalho >h1{
+    margin: 0px;
+    font-weight: 300; /*Define o peso da fonte um pouco mais fina*/
+    font-size: 2.8rem; /*aumentau um pouco o tamanho da fonte*/
+}
+
+.cabecalho > h2 {
+    margin: 0px;
+    font-weight: 200; /*Define o peso da fonte um pouco mais fina*/
+    font-size: 1.6rem; /*aumentau um pouco o tamanho da fonte*/
+}
+
+.principal{
+    grid-area: principal; /*Dentro da calsse PRINCIPAL tem uma ÁREA que se chama PRINCIPAL*/
+    height: calc(100vh - 180px); /*A classe "PRINCIPAL" ocupa 100% da área MENOS o tamanho do HEADER e do FOOTER*/
+    background-color: #f0f0f0;
+    padding: 20px; /*A classe principal terá uma distanciamento de 20px entre cabeçalho e rodapé*/
+}
+
+.conteudo {
+    position: relative;
+    height: 100%; /*Altura 100% da div*/
+    overflow-y: scroll; /*Se o conteúdo for maior que a div, a barra de colagem vai ser ativada somente dentro da DIV*/
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2); /* SOMBRA Gerado automaticamente no site https://www.cssmatic.com/box-shadow */
+}
+
+.rodape {
+    grid-area: rodape;
+    background-color: #fff;
+    /*position: sticky; bottom: 0px;*/                  /*Mantem o rodapé sempre visível e grudado no fim da página*/    
+    display: flex;
+    justify-content: flex-end; /*Coloca todos os ementos dentro da mesma linha ao final*/
+    align-items: center;
+    font-size: 1.2rem;
+    padding: 0px 20px; /*Zero no eixo vertical e 20 no eixo horizontal*/
+    color: #444;
+}
+
+.modulos{
+    display: flex; /*Todos os elementos fiquem na mesma linha*/
+    flex-wrap: wrap; /*Permite o display fazer quebra de linha*/
+    justify-content: space-around; /*Deixa espaço do lado esquerdo/direito e entre os elementos*/
+}
+
+.modulo {
+    flex-basis: 32%; /*Cada elemento deve ocupar 32% da tela*/
+    margin-bottom: 20px; /*20px de espaçamento do rodapé da DIV*/
+    border-radius: 5px; /*Curvar as pontas*/
+    }
+.modulo > h3{ /*Diretamente no elemento H3 dentro de  "modulo*/
+              margin: 0px;
+              color: #fff;
+              font-weight: 300; /*Grossura da fonte*/
+              font-size: 1.5rem; /*Tamanho da fonte*/
+              padding: 10px 20px; /*Espaçamento de 10px na vertical e 20 na horizontal*/
+              background-color: #1867c0; /*Cor do background será azul*/
+              }
+.modulo > ul{ /*Diretamente no */
+              margin: 0px;
+              padding: 10px;
+              list-style: none; /*Retira as "Bolinhas" do elemento UL*/
+              
+              }
+.modulo > ul > li{ /*Dentro de módulo tem uma UL, dentro de UL tem uma LI que deverá conter*/
+                   padding: 7px; /*Espaçamento entre cada um dos elementos*/
+                   font-size: 1.2rem;
+                   cursor: pointer; /*Sempre que passar o cursor em cima ele mudará o ícone do mouse para sinalizar que existe um link*/
+                   }
+.modulo > ul > li > a {
+    display: flex; /*Todos os elementos ficam na mesma linha*/
+    text-decoration: none; /*Retira o sublinhado dos elementos*/
+    color: #222;
+    }
+.modulo > ul > li:hover{ /*Quando o cursor estiver em cima do elemento*/
+                         background-color: #EEE;
+                         }
+.modulo.verde{border: 2px solid #4caf50;}
+.modulo.verde >h3{background-color: #4caf50;}
+
+.modulo.vermelho {border: 2px solid #F44336;}
+.modulo.vermelho > h3 {background-color: #F44336;}
+
+.modulo.azul {border: 2px solid #2196f3;}
+.modulo.azul > h3 {background-color: #2196f3;}
+
+.modulo.roxo { border: 2px solid #9c27b0;}
+.modulo.roxo > h3 {background-color: #9c27b0;}
+
+.modulo.laranja {border: 2px solid #FF9800;}
+.modulo.laranja > h3 {background-color: #FF9800;}
+
+
+.modulo.verde-escuro {border: 2px solid #1B5E20;}
+.modulo.verde-escuro > h3 {background-color: #1B5E20;}
+
+
+.modulo.vermelho-escuro {border: 2px solid #B71C1C;}
+.modulo.vermelho-escuro > h3 {background-color: #B71C1C;}
+
+.modulo.azul-escuro {border: 2px solid #0d47a1;}
+.modulo.azul-escuro  > h3 {background-color: #0d47a1;}
+
+.modulo.roxo-escuro {border: 2px solid #4a148c;}
+.modulo.roxo-escuro > h3 {background-color: #4a148c;}
