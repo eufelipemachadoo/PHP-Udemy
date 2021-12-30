@@ -25,7 +25,7 @@
     </header>
 
     <nav class="navegacao">
-        <a href="#" class="verde"> Sem formatação</a>
+        <a href="<?= "/{$_GET['dir']}/{$_GET['file']}.php"?>" class="verde"> Sem formatação</a>
         <a href="index.php" class="vermelho"> Voltar</a>
         
     </nav>
@@ -38,7 +38,7 @@
         <div class="conteudo">
    
            <?php
-            include('teste/test.php')
+            include(__DIR__ . "/{$_GET['dir']}/{$_GET['file']}.php");
            ?>
 
         </div>
