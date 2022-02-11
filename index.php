@@ -58,10 +58,28 @@
                             </a>
                     </li>
 
+                    <li>
+                            <a href="exercicio.php?dir=controle&file=operador_ternario">
+                              Op. Ternário
+                            </a>
+                    </li>
+
 
                     <li>
                             <a href="exercicio.php?dir=controle&file=desafio_pi">
                               Desafio PI
+                            </a>
+                    </li>
+
+                    <li>
+                            <a href="exercicio.php?dir=controle&file=switch">
+                              Switch Case
+                            </a>
+                    </li>
+
+                    <li>
+                            <a href="exercicio.php?dir=controle&file=desafio_switch">
+                              Desafio Switch Case
                             </a>
                     </li>
 

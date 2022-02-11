@@ -31,8 +31,9 @@
 
 <?php
 
+if (isset ($_POST['t1']) && isset ($_POST['t2'])){
     $t1 = $_POST ['t1'] === '1';
-    $t2 = $_POST ['t2'] === '2';
+    $t2 = !!$_POST ['t2'];
     $tv = '';
     $sorvete = false;    
     
@@ -61,6 +62,7 @@
     }
     
     echo "<p>$resultado</p>";
+}
      
 
     echo $_POST ['t1'];
